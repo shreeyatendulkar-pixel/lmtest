@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>High CLS Page</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, sans-serif; margin: 0; background: #fff7f7; color: #2b1f1f; }
+    header { background: #9f1239; color: white; padding: 1.25rem 2rem; }
+    main { max-width: 820px; margin: 2rem auto; padding: 0 1.5rem; }
+    .metric { position: sticky; top: 0; background: #ffe4e6; padding: 1rem; border: 1px solid #fecdd3; border-radius: 12px; z-index: 10; }
+    .ad, .hero, .notice { border-radius: 14px; margin: 1rem 0; padding: 1rem; }
+    .ad { background: #fecdd3; }
+    .hero { background: white; box-shadow: 0 8px 24px rgb(0 0 0 / 0.08); }
+    .notice { background: #fef2f2; border: 1px dashed #fb7185; }
+    button { padding: 0.75rem 1rem; border: 0; border-radius: 10px; background: #9f1239; color: white; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <header><h1>/high — intentionally high CLS</h1></header>
+  <main>
+    <p class="metric">Observed CLS: <strong id="cls">0.0000</strong></p>
+    <section class="hero">
+      <h2>Content starts immediately</h2>
+      <p>This page deliberately inserts new content above existing content after load. That pushes text down and creates layout shift.</p>
+      <button id="shiftNow">Trigger another layout shift</button>
+    </section>
+    <section id="target">
+      <h2>Main article</h2>
+      <p>Because no space is reserved above this content, late-loading banners, images, and notices will move this block around.</p>
+      <p>Repeat test in Lighthouse or DevTools Performance panel to see a high CLS score.</p>
+    </section>
+  </main>
+  <script>
+    let clsValue = 0;
+    new PerformanceObserver((entryList) => {
+      for (const entry of entryList.getEntries()) {
+        if (!entry.hadRecentInput) clsValue += entry.value;
+      }
+      document.getElementById('cls').textContent = clsValue.toFixed(4);
+    }).observe({ type: 'layout-shift', buffered: true });
+
+    function addShiftBlock(text, height) {
+      const block = document.createElement('div');
+      block.className = 'ad';
+      block.style.height = height + 'px';
+      block.innerHTML = '<h2>' + text + '</h2><p>This was injected late with no reserved space.</p>';
+      document.querySelector('main').insertBefore(block, document.getElementById('target'));
+    }
+
+    setTimeout(() => addShiftBlock('Late banner appears', 180), 900);
+    setTimeout(() => addShiftBlock('Another late module appears', 130), 1800);
+    document.getElementById('shiftNow').addEventListener('click', () => addShiftBlock('User-triggered shift', 120));
+  </script>
+</body>
+</html>
