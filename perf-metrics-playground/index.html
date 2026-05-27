@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Performance Metrics Playground</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<header>
+  <h1>Web Performance Metrics Playground</h1>
+  <p>Use this GitHub Pages site to test HIGH and LOW versions of common browser and synthetic monitoring metrics.</p>
+</header>
+<main>
+  <section class="card">
+    <h2>How this website works</h2>
+    <p>Every metric has two test pages:</p>
+    <p><span class="bad">HIGH</span> means the page intentionally behaves badly so the metric value should be worse.</p>
+    <p><span class="good">LOW</span> means the page is optimized so the metric value should be better.</p>
+    <p>Example: to test high First Contentful Paint, open <code>/fcp/high/</code>. To compare it with a good page, open <code>/fcp/low/</code>.</p>
+  </section>
+
+  <section class="card">
+    <h2>How to test</h2>
+    <ol>
+      <li>Open one HIGH URL and one LOW URL.</li>
+      <li>Open Chrome DevTools using <code>F12</code>.</li>
+      <li>Go to the <strong>Lighthouse</strong> tab.</li>
+      <li>Click <strong>Analyze page load</strong>.</li>
+      <li>Compare the HIGH and LOW pages.</li>
+    </ol>
+    <p>You can also use PageSpeed Insights, WebPageTest, browser DevTools, or synthetic monitoring tools.</p>
+  </section>
+
+  <section>
+    <h2>Metric test pages</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Client Time</h3>
+        <a class="btn high" href="./client-time/high/">HIGH test</a>
+        <a class="btn low" href="./client-time/low/">LOW test</a>
+      </div>
+      <div class="card">
+        <h3>Content Load</h3>
+        <a class="btn high" href="./content-load/high/">HIGH test</a>
+        <a class="btn low" href="./content-load/low/">LOW test</a>
+      </div>
+      <div class="card">
+        <h3>DOM Load</h3>
+        <a class="btn high" href="./dom-load/high/">HIGH test</a>
+        <a class="btn low" href="./dom-load/low/">LOW test</a>
+      </div>
+      <div class="card">
+        <h3>Document Complete</h3>
+        <a class="btn high" href="./document-complete/high/">HIGH test</a>
+        <a class="btn low" href="./document-complete/low/">LOW test</a>
+      </div>
+      <div class="card">
+        <h3>First Contentful Paint</h3>
+        <a class="btn high" href="./fcp/high/">HIGH test</a>
+        <a class="btn low" href="./fcp/low/">LOW test</a>
+      </div>
+      <div class="card">
+        <h3>First Paint</h3>
+        <a class="btn high" href="./fp/high/">HIGH test</a>
+        <a class="btn low" href="./fp/low/">LOW test</a>
+      </div>
+      <div class="card">
+        <h3>Frames Per Second</h3>
+        <a class="btn high" href="./fps/high/">HIGH test</a>
+        <a class="btn low" href="./fps/low/">LOW test</a>
+      </div>
+      <div class="card">
+        <h3>Items</h3>
+        <a class="btn high" href="./items/high/">HIGH test</a>
+        <a class="btn low" href="./items/low/">LOW test</a>
+      </div>
+      <div class="card">
+        <h3>Largest Contentful Paint</h3>
+        <a class="btn high" href="./lcp/high/">HIGH test</a>
+        <a class="btn low" href="./lcp/low/">LOW test</a>
+      </div>
+      <div class="card">
+        <h3>Render Start</h3>
+        <a class="btn high" href="./render-start/high/">HIGH test</a>
+        <a class="btn low" href="./render-start/low/">LOW test</a>
+      </div>
+      <div class="card">
+        <h3>Self Bottleneck</h3>
+        <a class="btn high" href="./self-bottleneck/high/">HIGH test</a>
+        <a class="btn low" href="./self-bottleneck/low/">LOW test</a>
+      </div>
+      <div class="card">
+        <h3>Self Downloaded Bytes</h3>
+        <a class="btn high" href="./self-downloaded-bytes/high/">HIGH test</a>
+        <a class="btn low" href="./self-downloaded-bytes/low/">LOW test</a>
+      </div>
+      <div class="card">
+        <h3>Speed Index</h3>
+        <a class="btn high" href="./speed-index/high/">HIGH test</a>
+        <a class="btn low" href="./speed-index/low/">LOW test</a>
+      </div>
+      <div class="card">
+        <h3>Third Party Bottleneck</h3>
+        <a class="btn high" href="./third-party-bottleneck/high/">HIGH test</a>
+        <a class="btn low" href="./third-party-bottleneck/low/">LOW test</a>
+      </div>
+      <div class="card">
+        <h3>Time To Interactive</h3>
+        <a class="btn high" href="./tti/high/">HIGH test</a>
+        <a class="btn low" href="./tti/low/">LOW test</a>
+      </div>
+      <div class="card">
+        <h3>Time To Title</h3>
+        <a class="btn high" href="./time-to-title/high/">HIGH test</a>
+        <a class="btn low" href="./time-to-title/low/">LOW test</a>
+      </div>
+      <div class="card">
+        <h3>Total Blocking Time</h3>
+        <a class="btn high" href="./tbt/high/">HIGH test</a>
+        <a class="btn low" href="./tbt/low/">LOW test</a>
+      </div>
+      <div class="card">
+        <h3>Visually Complete</h3>
+        <a class="btn high" href="./visually-complete/high/">HIGH test</a>
+        <a class="btn low" href="./visually-complete/low/">LOW test</a>
+      </div>
+      <div class="card">
+        <h3>Webpage Response Time</h3>
+        <a class="btn high" href="./webpage-response-time/high/">HIGH test</a>
+        <a class="btn low" href="./webpage-response-time/low/">LOW test</a>
+      </div>
+      <div class="card">
+        <h3>Webpage Throughput Time</h3>
+        <a class="btn high" href="./webpage-throughput-time/high/">HIGH test</a>
+        <a class="btn low" href="./webpage-throughput-time/low/">LOW test</a>
+      </div>
+      <div class="card">
+        <h3>Cumulative Layout Shift</h3>
+        <a class="btn high" href="./cls/high/">HIGH test</a>
+        <a class="btn low" href="./cls/low/">LOW test</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Important note</h2>
+    <p>Some metrics are directly observable in the browser, like FP, FCP, LCP, CLS, DOM load, and document load. Other metrics such as Speed Index, Visually Complete, throughput, and bottleneck values are usually calculated by tools, so this site simulates those scenarios and displays expected values.</p>
+  </section>
+</main>
+<footer>Performance metrics test site for GitHub Pages</footer>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Self Bottleneck - low</title>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body data-metric="self-bottleneck" data-mode="low">
+<header>
+  <h1 id="metric-name">Self Bottleneck</h1>
+  <p><span class="pill" id="mode-name">low</span></p>
+</header>
+<main>
+  <section class="card low">
+    <h2>Scenario</h2>
+    <p>This page is the <strong>LOW</strong> test page for <strong>Self Bottleneck</strong>.</p>
+    <p>Expected test value:</p>
+    <div class="metric-value" id="metric-value">Calculating...</div>
+    <p><a href="../../">Back to home</a> | <a href="../high/">Open opposite test</a></p>
+  </section>
+
+  <section class="card">
+    <h2>Browser-observed values</h2>
+    <p>These are collected from browser Performance APIs when available.</p>
+    <ul>
+      <li>Client time: <strong id="browser-client">pending</strong></li>
+      <li>DOM load: <strong id="browser-dom">pending</strong></li>
+      <li>Document complete/load: <strong id="browser-load">pending</strong></li>
+      <li>First Paint: <strong id="browser-fp">pending</strong></li>
+      <li>First Contentful Paint: <strong id="browser-fcp">pending</strong></li>
+      <li>Largest Contentful Paint: <strong id="browser-lcp">pending</strong></li>
+      <li>Cumulative Layout Shift: <strong id="browser-cls">pending</strong></li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Test content</h2>
+    <div id="hero" class="hero-box">Visible page content</div>
+    <div id="items-host"></div>
+  </section>
+
+  <section class="card">
+    <h2>Activity log</h2>
+    <pre id="log" class="log"></pre>
+  </section>
+</main>
+<footer>Use Lighthouse or your monitoring tool to compare HIGH and LOW pages.</footer>
+<script src="../../perf.js"></script>
+</body>
+</html>

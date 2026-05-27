@@ -1,0 +1,52 @@
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --ink: #172033;
+  --muted: #637083;
+  --brand: #2157d6;
+  --good: #137333;
+  --bad: #b3261e;
+  --border: #dfe5ef;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.55;
+}
+header {
+  background: linear-gradient(135deg, #173b8f, #2157d6);
+  color: white;
+  padding: 48px 24px;
+}
+main { max-width: 1100px; margin: 0 auto; padding: 28px 18px 56px; }
+h1 { margin: 0 0 10px; font-size: 40px; }
+h2 { margin-top: 34px; }
+a { color: var(--brand); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 22px;
+  margin: 18px 0;
+  box-shadow: 0 8px 28px rgba(17, 24, 39, 0.06);
+}
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.bad { color: var(--bad); font-weight: 700; }
+.good { color: var(--good); font-weight: 700; }
+.pill { display: inline-block; padding: 4px 10px; border-radius: 999px; background: #eef3ff; color: #183b8f; font-size: 13px; }
+.btn { display: inline-block; margin: 6px 8px 6px 0; padding: 8px 12px; border-radius: 8px; background: #eef3ff; }
+.btn.high { background: #fdecea; color: var(--bad); }
+.btn.low { background: #e6f4ea; color: var(--good); }
+.metric-value { font-size: 44px; font-weight: 800; margin: 8px 0; }
+.log { background: #111827; color: #e5e7eb; padding: 16px; border-radius: 10px; overflow: auto; min-height: 80px; }
+.spacer { height: 48px; }
+.shift-box { background: #fff7d6; border: 1px solid #ead27a; padding: 18px; border-radius: 12px; margin: 14px 0; }
+.hero-box { min-height: 260px; display: flex; align-items: center; justify-content: center; background: #e8f0fe; border-radius: 14px; font-size: 30px; font-weight: 700; }
+.warning { border-left: 5px solid var(--bad); }
+.success { border-left: 5px solid var(--good); }
+footer { text-align: center; color: var(--muted); padding: 26px; }
+code { background: #eef1f7; padding: 2px 6px; border-radius: 5px; }
